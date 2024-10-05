@@ -15,7 +15,8 @@ fun main() {
     println("tengo ${1} clientes")
 
     // strings()
-    enteros()
+//    enteros()
+    arreglos()
 }
 
 fun strings() {
@@ -74,4 +75,57 @@ fun enteros() {
     println(miHexa + 10)
 
     println(12.5e10) // 0.000000125
+
+    // operaciones de bit a bit
+    val primero = 0b1010
+    val segundo = 0b1100
+
+    println(primero and segundo) // 0b1000
+    println(primero or segundo) // 0b1110
+    println(primero xor segundo) // 0b0110
+
+    println(0b0011 shl 0b0001) // 0110
+
+    // Rangos
+    val miRango = 1..10 step 2
+    println(2 in miRango) // false
+
+    var miNumero = 1
+    miNumero /= 1
+    println(miNumero)
+
+    // enteros sin signo
+    val a2 = 10u
+    println(a2 - 11u)
+
+    // caracter
+    val miCaracter = '1'
+    val miNumero1 = miCaracter.digitToInt()
+}
+
+
+fun arreglos() {
+    val miArray = arrayOf(1, 2, 3)
+    println(miArray.contentToString())
+
+    val miArray2 = arrayOfNulls<String>(2)
+
+    var miArreglo3 = emptyArray<Int>()
+    miArreglo3 = arrayOf(2, 3, 5)
+
+    miArreglo3[2] = 6
+    println(miArreglo3.contentEquals(miArray))
+    println(miArreglo3.sum())
+
+    miArray[1] = 1
+    println(miArray.toList())
+
+    val persona:  Pair<String, Int> = Pair("Alicia", 30)
+
+    println("el nombre de la persona es ${persona.first}")
+    println("la edad de la persona es ${persona.second}")
+
+    val personas: Array<Pair<String, Int>> = arrayOf(persona, "Juan" to 50, "Ana" to 20)
+    println(personas.contentToString())
+    println(personas.toMap())
 }
