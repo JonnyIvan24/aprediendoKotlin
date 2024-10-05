@@ -1,5 +1,11 @@
 package com.example.myfirstapplication
 
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.time.DayOfWeek
+import java.time.LocalDate
+
+@RequiresApi(Build.VERSION_CODES.O)
 fun main() {
     var miTexto = "hola mundo"
     miTexto = "hola"
@@ -17,7 +23,35 @@ fun main() {
     // strings()
 //    enteros()
 //    arreglos()
-    coleciones()
+//    coleciones()
+
+    condicionales()
+}
+
+@RequiresApi(Build.VERSION_CODES.O)
+fun condicionales() {
+    val edad =  20
+
+    if (edad < 18) {
+        println("Tienes menos de 18 años")
+    } else if (edad >= 18 && edad <= 40) {
+        println("Tienes entre 18 y 40 años")
+    } else {
+        println("Tienes más de 40 años")
+    }
+
+    val diaActual = LocalDate.now()
+
+    val texto = when (diaActual.dayOfWeek) {
+        DayOfWeek.SATURDAY -> "sabado"
+        DayOfWeek.SUNDAY -> {
+
+            "domingo"
+        }
+        else -> "un día entre semana"
+    }
+
+    println(texto)
 }
 
 fun strings() {
