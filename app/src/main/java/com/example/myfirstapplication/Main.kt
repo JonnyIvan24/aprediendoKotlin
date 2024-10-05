@@ -16,7 +16,8 @@ fun main() {
 
     // strings()
 //    enteros()
-    arreglos()
+//    arreglos()
+    coleciones()
 }
 
 fun strings() {
@@ -128,4 +129,31 @@ fun arreglos() {
     val personas: Array<Pair<String, Int>> = arrayOf(persona, "Juan" to 50, "Ana" to 20)
     println(personas.contentToString())
     println(personas.toMap())
+}
+
+fun coleciones() {
+    val numerosInmutables = listOf(1, 2 ,3)
+    val numerosMutables = mutableListOf(1, 2 ,3)
+
+//    numerosInmutables[3] = 4 // nos da error por que no permite la edición
+//    numerosInmutables.add(4) // no existe el método ya que es inmutable
+//    numerosMutables[3] = 4
+    numerosMutables.add(4)
+
+
+    println(numerosInmutables)
+    println(numerosMutables)
+
+    // Maps
+
+    val mutableMap: MutableMap<String, Int> = mutableMapOf("Alicia" to 30, "Bob" to 25)
+
+    mutableMap["Alicia"] = 20
+
+    println(mutableMap["Alicia"])
+
+    // ArrayDeque
+
+    val deque = ArrayDeque(listOf(1, 2, 3))
+    println(deque)
 }
