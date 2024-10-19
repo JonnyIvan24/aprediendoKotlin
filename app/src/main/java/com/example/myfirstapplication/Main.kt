@@ -26,8 +26,30 @@ fun main() {
 //    coleciones()
 
 //    condicionales()
-    bucles()
+//    bucles()
+
+    nullSafety()
 }
+
+fun nullSafety() {
+    var a:String? = null
+
+    if (a == null) {
+        // ...
+    }
+
+    var b: Int = a?.length ?: 0
+
+    var persona: Person? = null
+    println(persona.toString())
+
+    val c: Any = "hola mundo"
+
+    val numero: Int? = c as? Int // null
+    val texto: String? = c as? String // hola mundo
+}
+
+data class Person(val name: String)
 
 fun bucles() {
     // también se puede iterar en las coleciones
