@@ -28,7 +28,64 @@ fun main() {
 //    condicionales()
 //    bucles()
 
-    nullSafety()
+//    nullSafety()
+    println(division(2, 5))
+
+    println(calcularPromedio(listOf(5, 10, 10)))
+
+    println(crearLista(1, 3, 5, 6))
+
+    val textoMayusculas = { texto: String -> texto.uppercase() }
+    println(textoMayusculas("hola"))
+
+    val sumaPares = { numeros: List<Int> ->
+        var total = 0
+        for (numero in numeros) {
+            if (numero % 2 == 0) {
+                total += numero
+            }
+        }
+        total
+    }
+
+    println(sumaPares(listOf(1, 3, 2)))
+
+    val suma: (a: Int, b: Int) -> Int = {a, b -> a + b}
+    val resta: (a: Int, b: Int) -> Int = {a, b -> a - b}
+
+    println(realizarOperacion(1, 2, suma))
+    println(realizarOperacion(1, 2, resta))
+
+    val numeros = listOf(-1, 2, 3, 4)
+
+    var numerosPares = numeros.filter{ numero -> numero % 2 == 0 }
+    numerosPares = numeros.filter{ it % 2 == 0 }
+
+    val buscarNegativos =  fun (numero: Int): Boolean {
+        return numero < 0
+    }
+    val negativos = numeros.filter(buscarNegativos)
+
+    println(negativos)
+
+    listOf(1, 2, 3, 4, 5).forEach{
+        if (it == 3) {
+            return@forEach
+        }
+        print(it)
+    }
+
+    println("")
+    val numero = run ciclo@{
+        listOf(1, 2, 3, 4, 5).forEach{
+            if (it == 3) {
+                return@ciclo it
+            }
+            print(it)
+        }
+    }
+    println("")
+    println(numero)
 }
 
 fun nullSafety() {
