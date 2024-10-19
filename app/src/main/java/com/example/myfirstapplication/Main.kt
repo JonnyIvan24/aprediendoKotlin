@@ -25,7 +25,28 @@ fun main() {
 //    arreglos()
 //    coleciones()
 
-    condicionales()
+//    condicionales()
+    bucles()
+}
+
+fun bucles() {
+    // también se puede iterar en las coleciones
+    // por ejemplo val myLista = mutableListOf(1, 2, 3, 4, 5)
+    for (number in 1..5) {
+        println(number)
+    }
+
+    var pastelesComidos = 0
+    while (pastelesComidos < 3) {
+        println("Se comio un pastel")
+        pastelesComidos++
+    }
+
+    var pastelesHorneados = 0
+    do {
+        println("Se horneo un pastel")
+        pastelesHorneados++
+    } while (pastelesHorneados < pastelesComidos)
 }
 
 @RequiresApi(Build.VERSION_CODES.O)
