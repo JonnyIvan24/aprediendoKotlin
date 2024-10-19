@@ -4,9 +4,10 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import java.time.DayOfWeek
 import java.time.LocalDate
+import kotlinx.coroutines.*
 
 @RequiresApi(Build.VERSION_CODES.O)
-fun main() {
+fun main() = runBlocking {
     var miTexto = "hola mundo"
     miTexto = "hola"
 
@@ -29,6 +30,18 @@ fun main() {
 //    bucles()
 
 //    nullSafety()
+//    funciones()
+
+    println("iniciando tarea..." )
+    val resultado = async { longRunningTask() }
+
+
+    println("Haciendo otras cosas..." )
+
+    println("Resultado de la tarea: ${resultado.await()}" )
+}
+
+fun funciones() {
     println(division(2, 5))
 
     println(calcularPromedio(listOf(5, 10, 10)))
