@@ -21,6 +21,10 @@ fun main() = runBlocking {
     println("tengo ${clientes} clientes")
     println("tengo ${1} clientes")
 
+    println("")
+    println("")
+    println("")
+
     // strings()
 //    enteros()
 //    arreglos()
@@ -32,13 +36,27 @@ fun main() = runBlocking {
 //    nullSafety()
 //    funciones()
 
-    println("iniciando tarea..." )
-    val resultado = async { longRunningTask() }
+//    println("iniciando tarea..." )
+//    val resultado = async { longRunningTask() }
 
 
-    println("Haciendo otras cosas..." )
+//    println("Haciendo otras cosas..." )
 
-    println("Resultado de la tarea: ${resultado.await()}" )
+//    println("Resultado de la tarea: ${resultado.await()}" )
+
+    clases()
+}
+
+fun clases() {
+    val persona = Persona("Ana")
+//    println(persona.nombre)
+//    persona.apellido = "Rosas"
+//    println(persona.apellido)
+//    persona.saludar()
+
+    val estudiante = Estudiante("Pedro", "Primero")
+    estudiante.nombre = "Juan"
+    estudiante.saludar()
 }
 
 fun funciones() {
