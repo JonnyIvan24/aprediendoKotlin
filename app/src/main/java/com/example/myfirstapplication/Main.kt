@@ -47,7 +47,34 @@ fun main() = runBlocking {
 //    clases()
 //    patrones()
 //    interfaces()
-    encapsulamiento()
+//    encapsulamiento()
+
+    val box = Box<String>("")
+    box.obtenerValor()
+
+    println(Direccion.SUR)
+
+    val dia = Dias.LUNES
+    println(dia.obtenerMensaje())
+}
+
+class Box<T>(private val valor: T){
+    fun obtenerValor(): T = valor
+}
+
+enum class Direccion{
+    NORTE, SUR, ESTE, OERTE
+}
+
+enum class Dias(val mensaje: String) {
+    LUNES("entre semana"),
+    MARTES("entre semana"),
+    SABADO("fin de semana"),
+    DOMINGO("fin de semana");
+
+    fun obtenerMensaje(): String {
+        return mensaje
+    }
 }
 
 fun encapsulamiento() {
