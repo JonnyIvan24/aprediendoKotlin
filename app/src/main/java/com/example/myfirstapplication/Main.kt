@@ -45,7 +45,25 @@ fun main() = runBlocking {
 //    println("Resultado de la tarea: ${resultado.await()}" )
 
 //    clases()
-    patrones()
+//    patrones()
+    interfaces()
+}
+
+fun interfaces() {
+    val estudiante = Estudiante("Pedro", "Primero")
+    estudiante.nombre = "Juan"
+    estudiante.saludar()
+
+    val a = object : EsUnPar {
+        override fun esUnPar(numero: Int): Boolean {
+            return numero % 2 == 0
+        }
+    }
+
+    println(a.esUnPar(2))
+
+    val b = EsUnPar { numero -> numero % 2 == 0 }
+    println(b.esUnPar(2))
 }
 
 fun patrones() {

@@ -22,13 +22,18 @@ open class Persona constructor(open val nombre: String, open var apellido: Strin
     }
 }
 
-open class Estudiante(override var nombre: String, var grado: String): Persona(nombre) {
+interface Usuario {
+    fun saludar() {
+        println("Hola soy un usuario")
+    }
+}
+
+open class Estudiante(override var nombre: String, var grado: String): Usuario, Persona(nombre) {
     init { println("Iniciando la clase derivada") }
 
-    final override fun saludar() {
-        // super hace referencia a la clase padre
-        super.saludar()
-        println("y estoy en $grado")
+    override fun saludar() {
+        super<Usuario>.saludar()
+        super<Persona>.saludar()
     }
 }
 
