@@ -22,6 +22,9 @@ open class Persona constructor(open val nombre: String, open var apellido: Strin
     }
 }
 
+
+
+
 interface Usuario {
     fun saludar() {
         println("Hola soy un usuario")

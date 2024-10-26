@@ -46,7 +46,13 @@ fun main() = runBlocking {
 
 //    clases()
 //    patrones()
-    interfaces()
+//    interfaces()
+    encapsulamiento()
+}
+
+fun encapsulamiento() {
+    val encapsulamiento = Encapsulamiento()
+    encapsulamiento.saludar()
 }
 
 fun interfaces() {
