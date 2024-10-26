@@ -44,7 +44,25 @@ fun main() = runBlocking {
 
 //    println("Resultado de la tarea: ${resultado.await()}" )
 
-    clases()
+//    clases()
+    patrones()
+}
+
+fun patrones() {
+    val motor = Motor()
+    val coche = Coche(motor)
+
+    println(coche.arrancar())
+
+    val impresora = ImpresoraReal()
+    val computadora = Computadora(impresora)
+    println(computadora.imprimir("documento.pdf"))
+}
+
+const val CODIGO_DEPRECADO = "Este código esta deprecado"
+
+@Deprecated(CODIGO_DEPRECADO, ReplaceWith("utiliza otra función")) fun metodoDeprecado() {
+    println("metodo deprecado")
 }
 
 fun clases() {
